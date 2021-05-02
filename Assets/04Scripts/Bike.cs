@@ -42,8 +42,8 @@ public class Bike : MonoBehaviour
             }
 
             // ÉnÉìÉhÉãÇÃîΩâfÇÕÇ§Ç‹Ç≠çsÇ©Ç»Ç¢ÇÃÇ≈ñ¢é¿ëï
-            //ApplyLocalPositionToVisuals(axleInfo.rightWheel);
-            //ApplyLocalPositionToVisuals(axleInfo.leftWheel);
+            ApplyLocalPositionToVisuals(axleInfo.rightWheel);
+            ApplyLocalPositionToVisuals(axleInfo.leftWheel);
         }
 
     }
