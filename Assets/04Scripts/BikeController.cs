@@ -2,19 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bike : MonoBehaviour
+public class BikeController : MonoBehaviour
 {
 
     public List<AxleInfo> axleInfos; // 個々の車軸の情報
     public float maxMotorTorque; // ホイールの最大トルク
     public float maxSteeringAngle; // ホイールのハンドル最大角度
 
-    public GameObject steering;
+    public GameObject steeringObj;
+    [SerializeField] private float motor;
+
+    [SerializeField] private float steering;
+
 
     // Use this for initialization
     void Start()
     {
-        Debug.Log("CarStart");
+        // Debug.Log("CarStart");
+        motor = 0;
+        steering = 0;
     }
 
     // Update is called once per frame
@@ -24,10 +30,10 @@ public class Bike : MonoBehaviour
     }
     public void FixedUpdate()
     {
-        Debug.Log("CarFUpdate");
-        float motor = maxMotorTorque * Input.GetAxis("Vertical");
-        float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
-        Debug.Log("motor:" + motor + " steering:" + steering);
+        // Debug.Log("CarFUpdate");
+        motor = maxMotorTorque * Input.GetAxis("Vertical");
+        steering = maxSteeringAngle * Input.GetAxis("Horizontal");
+        // Debug.Log("motor:" + motor + " steering:" + steering);
         foreach (AxleInfo axleInfo in axleInfos)
         {
             if (axleInfo.steering)
@@ -41,9 +47,13 @@ public class Bike : MonoBehaviour
                 axleInfo.rightWheel.motorTorque = motor;
             }
 
-            // ハンドルの反映はうまく行かないので未実装
-            ApplyLocalPositionToVisuals(axleInfo.rightWheel);
-            ApplyLocalPositionToVisuals(axleInfo.leftWheel);
+            // ハンドルの描写
+            Transform visualWheel = steeringObj.transform;
+            visualWheel.transform.localEulerAngles = new Vector3(
+                visualWheel.localEulerAngles.x,
+                 visualWheel.localEulerAngles.y,
+                   steering * 3);
+            // ↑ 3倍にしているのは実体に対して見た目の変化が小さかったから
         }
 
     }
@@ -52,12 +62,15 @@ public class Bike : MonoBehaviour
 
     public void ApplyLocalPositionToVisuals(WheelCollider collider)
     {
-        Transform visualWheel = steering.transform;
-        Vector3 position;
-        Quaternion rotation;
-        collider.GetWorldPose(out position, out rotation);
+        Transform visualWheel = steeringObj.transform;
+        //Vector3 position;
+        //Quaternion rotation;
+        //collider.GetWorldPose(out position, out rotation);
         // visualWheel.transform.position = position;
-        visualWheel.transform.rotation = rotation;
+        visualWheel.transform.localEulerAngles = new Vector3(
+            visualWheel.localEulerAngles.x,
+             visualWheel.localEulerAngles.y,
+               steering * 3);
     }
 
 
