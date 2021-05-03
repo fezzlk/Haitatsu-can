@@ -8,6 +8,7 @@ public class Menu : MonoBehaviour
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private Button resumeButton;
     [SerializeField] private Button refreshButton;
+    [SerializeField] private Button quitButton;
 
     private void Start()
     {
@@ -16,6 +17,7 @@ public class Menu : MonoBehaviour
         pauseButton.onClick.AddListener(Pause);
         resumeButton.onClick.AddListener(Resume);
         refreshButton.onClick.AddListener(Refresh);
+        quitButton.onClick.AddListener(Quit);
     }
 
     private void Pause()
@@ -32,6 +34,12 @@ public class Menu : MonoBehaviour
 
     private void Refresh()
     {
-        SceneManager.LoadScene("TitleScene");
+        SceneManager.LoadScene("10Title");
+    }
+
+
+    private void Quit()
+    {
+        SceneManager.LoadScene("30Result");
     }
 }
