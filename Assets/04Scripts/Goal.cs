@@ -15,7 +15,7 @@ public class Goal : MonoBehaviour
     void OnTriggerEnter(Collider collider)
     {
         // 通過したのがバイクであればリザルト画面へ
-        if (collider.gameObject.name == "MyCollider")
+        if (collider.gameObject.name == "ColliderBox")
         {
             Debug.Log("Access to Result Scene");
             SceneManager.LoadScene("40ArrivalScene");
