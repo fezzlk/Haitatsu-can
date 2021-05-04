@@ -26,14 +26,15 @@ public class BikeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
     public void FixedUpdate()
     {
+
         // Debug.Log("CarFUpdate");
         motor = maxMotorTorque * Input.GetAxis("Vertical");
         steering = maxSteeringAngle * Input.GetAxis("Horizontal");
-        // Debug.Log("motor:" + motor + " steering:" + steering);
+        Debug.Log(Input.GetAxis("Vertical"));
+        Debug.Log("motor:" + motor + " steering:" + steering);
         foreach (AxleInfo axleInfo in axleInfos)
         {
             if (axleInfo.steering)
@@ -43,6 +44,15 @@ public class BikeController : MonoBehaviour
             }
             if (axleInfo.motor)
             {
+                if (Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    // ‰¹Œ¹Žæ“¾
+                    GetComponent<AudioSource>().Play();
+                }
+                // if (Input.GetKeyUp(KeyCode.UpArrow))
+                // {
+                //     GetComponent<AudioSource>().Stop();
+                // }
                 axleInfo.leftWheel.motorTorque = motor;
                 axleInfo.rightWheel.motorTorque = motor;
             }
