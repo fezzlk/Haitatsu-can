@@ -186,7 +186,7 @@ MonoBehaviour:
     motor: 1
     steering: 0
   maxMotorTorque: 500
-  maxSteeringAngle: 5
+  maxSteeringAngle: 10
   steeringObj: {fileID: 1084346463243735185}
   motor: 0
   steering: 0
