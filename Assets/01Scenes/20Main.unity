@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: f42515b75bcf815439ecf73ec50b2721, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -672,8 +672,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 1919342142}
-  m_Follow: {fileID: 1881560184}
+  m_LookAt: {fileID: 1919338009}
+  m_Follow: {fileID: 1922798446}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5
@@ -2020,14 +2020,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3451204064028679246, guid: d98e5b1975cecc7449429e6a9e3dd4bd, type: 3}
   m_PrefabInstance: {fileID: 415212250}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1881560184 stripped
+--- !u!4 &1919338009 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2678843148448655154, guid: d98e5b1975cecc7449429e6a9e3dd4bd, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7837659369679262423, guid: d98e5b1975cecc7449429e6a9e3dd4bd, type: 3}
   m_PrefabInstance: {fileID: 415212250}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1919342142 stripped
+--- !u!4 &1922798446 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 1052210730225574885, guid: d98e5b1975cecc7449429e6a9e3dd4bd, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5148713992474646016, guid: d98e5b1975cecc7449429e6a9e3dd4bd, type: 3}
   m_PrefabInstance: {fileID: 415212250}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2008685506
