@@ -5,11 +5,20 @@ using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
-    // �S�[���o�[�ɐڐG
-    void OnCollisionEnter(Collision collision)
+
+    private void Start()
     {
-        Debug.Log("hoge");
-        Debug.Log(collision.gameObject.name);
-        SceneManager.LoadScene("ResultScene");
+        Debug.Log("fuga");
+    }
+
+    // ゴールバーを通過した時
+    void OnTriggerEnter(Collider collider)
+    {
+        // 通過したのがバイクであればリザルト画面へ
+        if (collider.gameObject.name == "MyCollider")
+        {
+            Debug.Log("finish!");
+            SceneManager.LoadScene("ArrivalScene");
+        }
     }
 }
