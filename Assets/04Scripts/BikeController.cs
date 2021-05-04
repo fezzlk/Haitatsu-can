@@ -46,11 +46,12 @@ public class BikeController : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
-                    // 音源取得
+                    // エンジン音再生
                     GetComponent<AudioSource>().Play();
                 }
                 if (Input.GetKeyUp(KeyCode.UpArrow))
                 {
+                    // エンジン音停止
                     GetComponent<AudioSource>().Stop();
                 }
                 axleInfo.leftWheel.motorTorque = motor;
