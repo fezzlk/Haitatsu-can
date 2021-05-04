@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/01Scenes/20Main.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/01Scenes/ArrivalScene.unity
+    path: Assets/01Scenes/40ArrivalScene.unity
     guid: 251fd4a9c2ef64e008679b7a706a3231
   m_configObjects: {}
