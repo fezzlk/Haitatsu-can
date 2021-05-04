@@ -4,8 +4,23 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    float countTime = 0;
-    
+    static float countTime = 0;
+    static bool isActive = true;
+    public static float getTime()
+    {
+        return countTime;
+    }
+
+    public static void resetTime()
+    {
+        countTime = 0;
+    }
+
+    public static void setIsActive(bool flag)
+    {
+        isActive = flag;
+    }
+
     void Start()
     {
 
@@ -13,7 +28,10 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        countTime += Time.deltaTime;
-        GetComponent<Text>().text = countTime.ToString("F2");
+        if (isActive)
+        {
+            countTime += Time.deltaTime;
+            GetComponent<Text>().text = countTime.ToString("F2");
+        }
     }
 }

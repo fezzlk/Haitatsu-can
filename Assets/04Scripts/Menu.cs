@@ -35,6 +35,7 @@ public class Menu : MonoBehaviour
     private void Refresh()
     {
         SceneManager.LoadScene("10Title");
+        Timer.resetTime(); // タイマーをリセット
     }
 
 

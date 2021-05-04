@@ -18,6 +18,7 @@ public class Goal : MonoBehaviour
         if (collider.gameObject.name == "ColliderBox")
         {
             Debug.Log("Access to Result Scene");
+            Timer.setIsActive(false);
             SceneManager.LoadScene("30Result");
         }
     }
