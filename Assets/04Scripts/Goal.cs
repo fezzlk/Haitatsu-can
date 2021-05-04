@@ -17,8 +17,9 @@ public class Goal : MonoBehaviour
         // 通過したのがバイクであればリザルト画面へ
         if (collider.gameObject.name == "MyCollider")
         {
-            Debug.Log("finish!");
-            SceneManager.LoadScene("ArrivalScene");
+            Debug.Log("Access to Result Scene");
+            SceneManager.LoadScene("40ArrivalScene");
+            // SceneManager.LoadScene("30ResultScene");
         }
     }
 }
