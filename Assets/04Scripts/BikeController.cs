@@ -49,10 +49,10 @@ public class BikeController : MonoBehaviour
                     // ‰¹Œ¹Žæ“¾
                     GetComponent<AudioSource>().Play();
                 }
-                // if (Input.GetKeyUp(KeyCode.UpArrow))
-                // {
-                //     GetComponent<AudioSource>().Stop();
-                // }
+                if (Input.GetKeyUp(KeyCode.UpArrow))
+                {
+                    GetComponent<AudioSource>().Stop();
+                }
                 axleInfo.leftWheel.motorTorque = motor;
                 axleInfo.rightWheel.motorTorque = motor;
             }
