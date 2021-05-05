@@ -10,6 +10,8 @@ public class StartButton : MonoBehaviour
         var button = GetComponent<Button>();
         button.onClick.AddListener(() =>
         {
+            Timer.resetTime();
+            Timer.setIsActive(true);
             SceneManager.LoadScene("20Main");
         });
     }
