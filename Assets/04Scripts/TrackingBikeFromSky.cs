@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TrackingBikeFromSky : MonoBehaviour
 {
+    // public static int cameraOffsetX = 10;
     [SerializeField] private GameObject bike;
 
     // Start is called before the first frame update
@@ -17,7 +18,7 @@ public class TrackingBikeFromSky : MonoBehaviour
     void Update()
     {
         var pos = bike.transform.position;
-        pos.x += 10;
+        // pos.x += cameraOffsetX;
         pos.y = transform.position.y;
         transform.position = pos;
     }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class showWhenIsOutside : MonoBehaviour
 {
     [SerializeField] private Camera minimapCamera;              // ミニマップ用カメラ
+    [SerializeField] private float rate = 0.3f;              // ミニマップの縮尺(<1)
     [SerializeField] private Transform iconTarget;              // アイコンに対応するオブジェクト（建造物等）
     [SerializeField] private float rangeRadiusOffset = 1.0f;    // 表示範囲のオフセット
 
@@ -39,8 +40,7 @@ public class showWhenIsOutside : MonoBehaviour
 
         // 直線距離で判定するため、yは0扱いにする
         cameraPos.y = targetPos.y = 0;
-
-        return Vector3.Distance(cameraPos, targetPos) <= minimapRangeRadius - rangeRadiusOffset;
+        return rate * Vector3.Distance(cameraPos, targetPos) <= minimapRangeRadius - rangeRadiusOffset;
     }
 
     private void DispIcon()
@@ -64,7 +64,7 @@ public class showWhenIsOutside : MonoBehaviour
         var offset = iconPos - centerPos;
 
         // 指定距離で制限した方向ベクトルを求めてアイコン位置を設定する
-        transform.position = centerPos + Vector3.ClampMagnitude(offset, minimapRangeRadius - rangeRadiusOffset);
+        transform.position = centerPos + Vector3.ClampMagnitude(offset, (minimapRangeRadius - rangeRadiusOffset) / rate);
     }
 
 
