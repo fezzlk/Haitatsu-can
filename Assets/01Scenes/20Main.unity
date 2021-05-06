@@ -2261,14 +2261,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1335770199}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95ae28f9943794528942bb52cf3753eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   minimapCamera: {fileID: 1550599980}
-  iconTarget: {fileID: 1335770200}
-  rangeRadiusOffset: 1
+  rate: 0.3
+  iconTarget: {fileID: 1600716852}
+  rangeRadiusOffset: 0
 --- !u!1 &1357766045 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5144633286372043854, guid: c5c4e1cd8efae9b438fea58bab7b6531, type: 3}
